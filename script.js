@@ -12,3 +12,5 @@
 // --(Stretch mode: adjust total monthly cost on delete)
 // update README.md!!!
 
+let employees = [];
+
