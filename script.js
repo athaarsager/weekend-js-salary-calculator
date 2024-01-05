@@ -14,3 +14,18 @@
 
 let employees = [];
 
+function addEmployee() {
+    const tbody = document.querySelector("tbody");
+    const employee = {
+        firstName: document.getElementById("first-name").value,
+        lastName: document.getElementById("last-name").value,
+        id: document.getElementById("id").value,
+        title: document.getElementById("title").value,
+        salary: document.getElementById("salary");
+    }
+    employees.push(employee);
+
+    for (let person of employees) {
+        tbody.innerHTML = "<tr></tr>";//format the employee info into the table here
+    }
+} 
