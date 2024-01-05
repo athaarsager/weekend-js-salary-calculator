@@ -1,4 +1,14 @@
+
+:root {
+    /* found below color scheme, saved in variables for reference */
+    --first-color: #f0ece2;
+    --second-color: #dfd3c3;
+    --third-color: #c7b198;
+    --fourth-color: #596e79;
+}
+
 header {
     display: flex;
     justify-content: center;
+    background-color: var(--first-color);
 }
