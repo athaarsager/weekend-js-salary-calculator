@@ -79,7 +79,7 @@ td {
 }
 
 #total-cost-display {
-    display: inline-block;
+    display: inline-block; /*Had to use inline-block to give a width property*/
     width: 160px;
 }
 

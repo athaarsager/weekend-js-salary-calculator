@@ -9,6 +9,10 @@
 // Append each employee's information in the table, add delete button, and clear input fields onSubmit
 
 let employees = [];
+const currencyFormat = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "USD",
+});//need to use this with .format to convert number to currency. Stored in variable since using in two places
 
 function addEmployee(e) {
     e.preventDefault();
@@ -38,7 +42,7 @@ function addEmployee(e) {
             <td>${person.lastName}</td>
             <td>${person.id}</td>
             <td>${person.title}</td>
-            <td>${person.salary}</td>
+            <td>${currencyFormat.format(person.salary)}</td>
             <td class="delete-container"><button>Delete</button></td>
         </tr>
         `;
@@ -63,7 +67,7 @@ function updateMonthlyCosts() {
     const totalCostDisplay = document.getElementById("total-cost-display");
     let totalCost = 0;
     for (let person of employees) {
-        totalCost += person.salary/12;
+        totalCost += person.salary/12;//person.salary is a string, but the division converts it to a number
     }
-    totalCostDisplay.textContent = totalCost;
+    totalCostDisplay.textContent = currencyFormat.format(totalCost);
 }
