@@ -8,7 +8,6 @@ function addEmployee(e) {
     e.preventDefault();
 
     const tableContent = document.getElementById("main-content");
-    tableContent.innerHTML = "";
 
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
@@ -29,6 +28,8 @@ function addEmployee(e) {
         alert("Must complete all fields!");
         return;
     }
+
+    tableContent.innerHTML = "";
 
     employees.push(employee);
 
