@@ -16,13 +16,21 @@ let employees = [];
 
 function addEmployee(e) {
     e.preventDefault();
+
     const tbody = document.querySelector("tbody");
+
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const id = document.getElementById("id");
+    const title = document.getElementById("title");
+    const salary = document.getElementById("salary");
+
     const employee = {
-        firstName: document.getElementById("first-name").value,
-        lastName: document.getElementById("last-name").value,
-        id: document.getElementById("id").value,
-        title: document.getElementById("title").value,
-        salary: document.getElementById("salary").value,
+        firstName: firstName.value,
+        lastName: lastName.value,
+        id: id.value,
+        title: title.value,
+        salary: salary.value,
     }
     employees.push(employee);
 
@@ -38,4 +46,9 @@ function addEmployee(e) {
         `;//format the employee info into the table here
     }
     console.log(employees);
+    firstName.value = "";
+    lastName.value = "";
+    id.value = "";
+    title.value = "";
+    salary.value = "";
 } 
