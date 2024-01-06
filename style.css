@@ -31,7 +31,7 @@ input {
 
 #submit-container {
     display: flex;
-    width: 772px;
+    width: 740px; /*next time make this a child of the above content and use em to determine width*/
     justify-content: flex-end;
 }
 
