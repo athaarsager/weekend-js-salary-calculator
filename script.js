@@ -7,10 +7,6 @@
 
 // Store the above information in an array of employee objects, then:
 // Append each employee's information in the table, add delete button, and clear input fields onSubmit
-// Create function that updates the monthly costs (total cost variable) with each employee added (remember, MONTHLY cost)
-// --IF total monthly costs > 20k, add red background to total monthly cost
-// --(Stretch mode: adjust total monthly cost on delete)
-// update README.md!!!
 
 let employees = [];
 
@@ -48,9 +44,26 @@ function addEmployee(e) {
         `;
     }
     console.log(employees);
+
+    updateMonthlyCosts();
+    
     firstName.value = "";
     lastName.value = "";
     id.value = "";
     title.value = "";
     salary.value = "";
 } 
+
+// Create function that updates the monthly costs (total cost variable) with each employee added (remember, MONTHLY cost)
+// --IF total monthly costs > 20k, add red background to total monthly cost
+// --(Stretch mode: adjust total monthly cost on delete)
+// update README.md!!!
+
+function updateMonthlyCosts() {
+    const totalCostDisplay = document.getElementById("total-cost-display");
+    let totalCost = 0;
+    for (let person of employees) {
+        totalCost += person.salary/12;
+    }
+    totalCostDisplay.textContent = totalCost;
+}

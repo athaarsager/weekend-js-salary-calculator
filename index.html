@@ -31,7 +31,7 @@
     <div id="table-container">
         <h2>Employees</h2>
         <table>
-            <!-- DOM insterts tbody tag here -->
+            <!-- DOM insterts tbody tag here, so can't use querySelector to grab the first one -->
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -45,7 +45,8 @@
         </table>
     </div>
     <div id="cost-container">
-        <h2 id="total-cost">Total Monthly:</h2>
+        <h2>Total Monthly:</h2>
+        <h2 id="total-cost-display"></h2>
     </div>
 </body>
 
