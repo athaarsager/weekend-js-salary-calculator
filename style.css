@@ -99,7 +99,7 @@ td {
 /* need to actually make it align with table, not just bottom of page */
 #cost-container {
     display: flex;
-    width: 1030px;
+    width: 1035px;
     justify-content: flex-end;
 }
 
@@ -107,12 +107,12 @@ td {
     display: inline-block;
     /*Had to use inline-block to give a width property*/
     width: 160px;
-    text-align: right;
-    padding-right: 2px;
+    text-align: left;
+    padding-left: 2px;
 }
 
 #total-monthly {
-    padding-right: 6px;
+    padding-right: 5px;
 }
 
 footer {
