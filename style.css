@@ -74,6 +74,15 @@ td {
 /* need to actually make it align with table, not just bottom of page */
 #cost-container {
     display: flex;
-    width: 860px;
+    width: 1030px;
     justify-content: flex-end;
+}
+
+#total-cost-display {
+    display: inline-block;
+    width: 160px;
+}
+
+#total-monthly {
+    padding-right: 5px;
 }
