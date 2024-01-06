@@ -107,10 +107,12 @@ td {
     display: inline-block;
     /*Had to use inline-block to give a width property*/
     width: 160px;
+    text-align: right;
+    padding-right: 2px;
 }
 
 #total-monthly {
-    padding-right: 5px;
+    padding-right: 6px;
 }
 
 footer {
