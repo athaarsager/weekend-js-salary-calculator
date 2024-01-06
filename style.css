@@ -87,6 +87,11 @@ td {
     background-color: var(--third-color);
 }
 
+#tfooter {
+    height: 20px;
+    background-color: var(--second-color);
+}
+
 #table-container {
     margin-left: 2rem;
 }
