@@ -1,4 +1,3 @@
-
 :root {
     /* found below color scheme, saved in variables for reference */
     --first-color: #c7b198;
@@ -8,7 +7,7 @@
 }
 
 body {
-    margin: 0; 
+    margin: 0;
 }
 
 header {
@@ -31,7 +30,8 @@ input {
 
 #submit-container {
     display: flex;
-    width: 740px; /*next time make this a child of the above content and use em to determine width*/
+    width: 740px;
+    /*next time make this a child of the above content and use em to determine width*/
     justify-content: flex-end;
 }
 
@@ -45,10 +45,12 @@ input {
 }
 
 table {
-    border-collapse: collapse;/*this eliminates spacing between table cells. Has to be applied to the full table element*/
+    border-collapse: collapse;
+    /*this eliminates spacing between table cells. Has to be applied to the full table element*/
 }
 
-th, td {
+th,
+td {
     border: 1px solid black;
     background-color: var(--second-color);
     width: 160px;
@@ -56,7 +58,8 @@ th, td {
     padding-left: 5px;
     text-align: left;
     font-size: 20px;
-    font-weight: 400; /*This is the average font-weight*/
+    font-weight: 400;
+    /*This is the average font-weight*/
 }
 
 td {
@@ -68,7 +71,8 @@ td {
 }
 
 .delete-container {
-    text-align: center; /*text-align is easiest way to align contents of table cell. display: flex does not work*/
+    text-align: center;
+    /*text-align is easiest way to align contents of table cell. display: flex does not work*/
 }
 
 /* need to actually make it align with table, not just bottom of page */
@@ -79,7 +83,8 @@ td {
 }
 
 #total-cost-display {
-    display: inline-block; /*Had to use inline-block to give a width property*/
+    display: inline-block;
+    /*Had to use inline-block to give a width property*/
     width: 160px;
 }
 

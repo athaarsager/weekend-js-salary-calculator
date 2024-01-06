@@ -33,7 +33,15 @@ function addEmployee(e) {
         title: title.value,
         salary: salary.value,
     }
+
+    //below code checks if any fields were left empty, alerts user to complete fields
+    if (Object.values(employee).includes("")) {
+        alert("Must complete all fields!");
+        return;
+    }
+
     employees.push(employee);
+
 
     for (let person of employees) {
         tableContent.innerHTML += `
@@ -50,13 +58,13 @@ function addEmployee(e) {
     console.log(employees);
 
     updateMonthlyCosts();
-    
+
     firstName.value = "";
     lastName.value = "";
     id.value = "";
     title.value = "";
     salary.value = "";
-} 
+}
 
 // Create function that updates the monthly costs (total cost variable) with each employee added (remember, MONTHLY cost)
 // --IF total monthly costs > 20k, add red background to total monthly cost
@@ -67,7 +75,7 @@ function updateMonthlyCosts() {
     const totalCostDisplay = document.getElementById("total-cost-display");
     let totalCost = 0;
     for (let person of employees) {
-        totalCost += person.salary/12;//person.salary is a string, but the division converts it to a number
+        totalCost += person.salary / 12;//person.salary is a string, but the division converts it to a number
     }
     if (totalCost > 20000) {
         totalCostDisplay.style.backgroundColor = "red";
