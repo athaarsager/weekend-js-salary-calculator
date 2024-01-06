@@ -69,5 +69,8 @@ function updateMonthlyCosts() {
     for (let person of employees) {
         totalCost += person.salary/12;//person.salary is a string, but the division converts it to a number
     }
+    if (totalCost > 20000) {
+        totalCostDisplay.style.backgroundColor = "red";
+    }
     totalCostDisplay.textContent = currencyFormat.format(totalCost);
 }
