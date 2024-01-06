@@ -1,9 +1,12 @@
+//declare global variables
+
 let employees = [];
 const currencyFormat = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "USD",
 });//need to use this with .format to convert number to currency. Stored in variable since using in two places
-let employeeCount = 0;
+
+let employeeCount = 0;//track number of employees added to table
 
 function addEmployee(e) {
     e.preventDefault();
@@ -35,8 +38,10 @@ function addEmployee(e) {
         return;
     }
 
+    //do not clear HTML before above conditionals run, otherwise table will clear when it shouldn't
     tableContent.innerHTML = "";
 
+    //add employee to array then loop through it to update DOM
     employees.push(employee);
 
     for (let person of employees) {
@@ -55,6 +60,7 @@ function addEmployee(e) {
 
     updateMonthlyCosts();
 
+    //clear form fields and update total employees
     firstName.value = "";
     lastName.value = "";
     id.value = "";
