@@ -1,13 +1,16 @@
 :root {
     /* found below color scheme, saved in variables for reference */
-    --first-color: #c7b198;
-    --second-color: #dfd3c3;
-    --third-color: #f0ece2;
-    --fourth-color: #596e79;
+    --first-color: hsl(32, 30%, 69%);
+    --second-color: hsl(34, 30%, 82%);
+    --third-color: hsl(43, 32%, 91%);
+    --fourth-color: hsl(201, 15%, 41%);
+    --button-color: hsl(0, 3%, 92%);
 }
 
 body {
     margin: 0;
+    /* made body slightly lighter than lightest color in palette for contrast with table */
+    background-color: hsl(43, 32%, 94%);
 }
 
 header {
@@ -35,13 +38,31 @@ input {
     justify-content: flex-end;
 }
 
+#submit-button, button {
+    background-color: var(--button-color);
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+#submit-button, button:hover {
+    cursor: pointer;
+}
+
 #submit-button {
     margin-top: 1.5rem;
     width: 100px;
     height: 30px;
-    border: 1.5px solid black;
-    border-radius: 5px;
     font-size: 18px;
+}
+
+#submit-button:active{
+    background-color: hsl(0, 3%, 96%);
+}
+
+button {
+    width: 80px;
+    height: 28px;
+    font-size: 14px;
 }
 
 table {
@@ -90,4 +111,20 @@ td {
 
 #total-monthly {
     padding-right: 5px;
+}
+
+footer {
+    background-color: var(--fourth-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* below text is what creates the footer's fixed position */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /*measured header to match height*/
+    height: 80px;
+    /* matched text color with body color */
+    color: hsl(43, 32%, 94%);
 }

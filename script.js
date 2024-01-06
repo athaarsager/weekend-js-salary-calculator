@@ -1,13 +1,3 @@
-// Collect input for:
-// employee firstName
-// employee lastName
-// employee ID number
-// employee job title
-// employee annual salary
-
-// Store the above information in an array of employee objects, then:
-// Append each employee's information in the table, add delete button, and clear input fields onSubmit
-
 let employees = [];
 const currencyFormat = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -42,7 +32,6 @@ function addEmployee(e) {
 
     employees.push(employee);
 
-
     for (let person of employees) {
         tableContent.innerHTML += `
         <tr>
@@ -66,8 +55,6 @@ function addEmployee(e) {
     salary.value = "";
 }
 
-// Create function that updates the monthly costs (total cost variable) with each employee added (remember, MONTHLY cost)
-// --IF total monthly costs > 20k, add red background to total monthly cost
 // --(Stretch mode: adjust total monthly cost on delete)
 // update README.md!!!
 
@@ -84,5 +71,4 @@ function updateMonthlyCosts() {
 }
 
 //onDelete, remove entire row from table
-
 const removeEmployee = (e) => e.target.closest("tr").remove();
