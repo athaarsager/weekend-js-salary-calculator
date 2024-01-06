@@ -43,7 +43,7 @@ function addEmployee(e) {
             <td>${person.id}</td>
             <td>${person.title}</td>
             <td>${currencyFormat.format(person.salary)}</td>
-            <td class="delete-container"><button>Delete</button></td>
+            <td class="delete-container"><button onClick="removeEmployee(event)">Delete</button></td>
         </tr>
         `;
     }
@@ -74,3 +74,7 @@ function updateMonthlyCosts() {
     }
     totalCostDisplay.textContent = currencyFormat.format(totalCost);
 }
+
+//onDelete, remove entire row from table
+
+const removeEmployee = (e) => e.target.closest("tr").remove();
