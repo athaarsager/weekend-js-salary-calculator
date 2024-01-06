@@ -1,9 +1,9 @@
 
 :root {
     /* found below color scheme, saved in variables for reference */
-    --first-color: #f0ece2;
+    --first-color: #c7b198;
     --second-color: #dfd3c3;
-    --third-color: #c7b198;
+    --third-color: #f0ece2;
     --fourth-color: #596e79;
 }
 
@@ -44,7 +44,12 @@ input {
     font-size: 18px;
 }
 
-th {
+table {
+    border-collapse: collapse;/*this eliminates spacing between table cells. Has to be applied to the full table element*/
+}
+
+th, td {
+    border: 1px solid black;
     background-color: var(--second-color);
     width: 160px;
     height: 50px;
@@ -52,6 +57,10 @@ th {
     text-align: left;
     font-size: 20px;
     font-weight: 400; /*This is the average font-weight*/
+}
+
+td {
+    background-color: var(--third-color);
 }
 
 #table-container {
