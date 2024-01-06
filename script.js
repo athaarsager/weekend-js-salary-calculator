@@ -17,7 +17,8 @@ let employees = [];
 function addEmployee(e) {
     e.preventDefault();
 
-    const tbody = document.querySelector("tbody");
+    const tableContent = document.getElementById("main-content");
+    tableContent.innerHTML = "";
 
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
@@ -35,13 +36,13 @@ function addEmployee(e) {
     employees.push(employee);
 
     for (let person of employees) {
-        tbody.innerHTML = `
+        tableContent.innerHTML += `
         <tr>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.id}</td>
-            <td>${employee.title}</td>
-            <td>${employee.salary}</td>
+            <td>${person.firstName}</td>
+            <td>${person.lastName}</td>
+            <td>${person.id}</td>
+            <td>${person.title}</td>
+            <td>${person.salary}</td>
             <td class="delete-container"><button>Delete</button></td>
         </tr>
         `;
