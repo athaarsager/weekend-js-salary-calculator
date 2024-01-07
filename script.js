@@ -36,6 +36,19 @@ function addEmployee(e) {
         return;
     }
 
+    let idExists = false;
+    employees.forEach((person) => {
+        if (person.id === employee.id) {
+            alert("Employee ID already exists. Please choose a different number.");
+            idExists = true;
+            return;//this return only exits this anonymous function. Have to adjust idExists variable to exit full function
+        }
+    });
+
+    if (idExists) {
+        return;
+    }
+
     //add employee to array then loop through it to update DOM
     employees.push(employee);
 
