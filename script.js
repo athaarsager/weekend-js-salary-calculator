@@ -84,9 +84,8 @@ function updateMonthlyCosts() {
     for (let person of employees) {
         totalCost += person.salary / 12;//person.salary is a string, but the division converts it to a number
     }
-    if (totalCost > 20000) {
-        totalCostDisplay.style.backgroundColor = "red";
-    }
+
+    totalCost > 20000 ? totalCostDisplay.style.backgroundColor = "red" : totalCostDisplay.style.backgroundColor = "";
     totalCostDisplay.textContent = currencyFormat.format(totalCost);
 }
 
@@ -94,6 +93,8 @@ function updateMonthlyCosts() {
 function removeEmployee(e) {
     const employeeNumber = e.target.closest("tr").id;
     employees.splice(parseInt(employeeNumber)-1, 1);
+    updateTable();
+    updateMonthlyCosts();
     console.log(`This is the updated array after removing employees: ${JSON.stringify(employees)}`);
     e.target.closest("tr").remove();
 }
