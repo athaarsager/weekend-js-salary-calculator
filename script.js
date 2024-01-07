@@ -45,8 +45,6 @@ function addEmployee(e) {
     //add employee to array then loop through it to update DOM
     employees.push(employee);
 
-    console.log(employees);
-
     updateTable();
 
     updateMonthlyCosts();
@@ -99,6 +97,5 @@ function removeEmployee(e) {
     employees.splice(parseInt(employeeNumber)-1, 1);
     updateTable();
     updateMonthlyCosts();
-    console.log(`This is the updated array after removing employees: ${JSON.stringify(employees)}`);
     e.target.closest("tr").remove();
 }

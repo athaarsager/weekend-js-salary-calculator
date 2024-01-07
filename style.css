@@ -17,6 +17,7 @@ body {
     flex-direction: column;
 }
 
+/*This was added to help the main content expand dynamically*/
 main {
     flex: 1;
 }
