@@ -16,8 +16,6 @@ function addEmployee(e) {
         return;
     }
 
-    const tableContent = document.getElementById("main-content");
-
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
     const id = document.getElementById("id");
@@ -38,25 +36,14 @@ function addEmployee(e) {
         return;
     }
 
-    //do not clear HTML before above conditionals run, otherwise table will clear when it shouldn't
-    tableContent.innerHTML = "";
-
     //add employee to array then loop through it to update DOM
     employees.push(employee);
 
-    for (let person of employees) {
-        tableContent.innerHTML += `
-        <tr>
-            <td>${person.firstName}</td>
-            <td>${person.lastName}</td>
-            <td>${person.id}</td>
-            <td>${person.title}</td>
-            <td>${currencyFormat.format(person.salary)}</td>
-            <td class="delete-container"><button onClick="removeEmployee(event)">Delete</button></td>
-        </tr>
-        `;
-    }
     console.log(employees);
+
+    employeeCount++;
+
+    updateTable();
 
     updateMonthlyCosts();
 
@@ -66,12 +53,30 @@ function addEmployee(e) {
     id.value = "";
     title.value = "";
     salary.value = "";
-
-    employeeCount++;
 }
 
 // --(Stretch mode: adjust total monthly cost on delete)
 // update README.md!!!
+
+function updateTable() {
+    const tableContent = document.getElementById("main-content");
+
+    tableContent.innerHTML = "";
+
+    for (let i = 0; i < employees.length; i++) {
+        const person = employees[i]
+        tableContent.innerHTML += `
+        <tr id="${i + 1}">
+            <td>${person.firstName}</td>
+            <td>${person.lastName}</td>
+            <td>${person.id}</td>
+            <td>${person.title}</td>
+            <td>${currencyFormat.format(person.salary)}</td>
+            <td class="delete-container"><button onClick="removeEmployee(event)">Delete</button></td>
+        </tr>
+        `;
+    }
+}
 
 function updateMonthlyCosts() {
     const totalCostDisplay = document.getElementById("total-cost-display");
@@ -86,4 +91,9 @@ function updateMonthlyCosts() {
 }
 
 //onDelete, remove entire row from table
-const removeEmployee = (e) => e.target.closest("tr").remove();
+function removeEmployee(e) {
+    const employeeNumber = e.target.closest("tr").id;
+    employees.splice(parseInt(employeeNumber)-1, 1);
+    console.log(`This is the updated array after removing employees: ${JSON.stringify(employees)}`);
+    e.target.closest("tr").remove();
+}
