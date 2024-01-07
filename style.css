@@ -9,8 +9,17 @@
 
 body {
     margin: 0;
+    /* 100vh tells the body to take up the entire height of the viewport */
+    min-height: 100vh;
     /* made body slightly lighter than lightest color in palette for contrast with table */
     background-color: hsl(43, 32%, 94%);
+    display: flex;
+    flex-direction: column;
+}
+
+/*This was added to help the main content expand dynamically*/
+main {
+    flex: 1;
 }
 
 header {
@@ -23,7 +32,7 @@ header {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 input {
@@ -33,9 +42,12 @@ input {
 
 #submit-container {
     display: flex;
-    width: 740px;
+    /*width prevents this from collapsing. Need to add flex shrink. I think...*/
+    max-width: 671px;
     /*next time make this a child of the above content and use em to determine width*/
     justify-content: flex-end;
+    margin-right: 50px;
+    margin-left: 70px;
 }
 
 #submit-button, button {
@@ -104,8 +116,9 @@ td {
 /* need to actually make it align with table, not just bottom of page */
 #cost-container {
     display: flex;
-    width: 1035px;
+    max-width: 838px;
     justify-content: flex-end;
+    margin-left: 194px;
 }
 
 #total-cost-display {
@@ -125,11 +138,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* below text is what creates the footer's fixed position */
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     /*measured header to match height*/
     height: 80px;
     /* matched text color with body color */
