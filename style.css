@@ -9,8 +9,16 @@
 
 body {
     margin: 0;
+    /* 100vh tells the body to take up the entire height of the viewport */
+    min-height: 100vh;
     /* made body slightly lighter than lightest color in palette for contrast with table */
     background-color: hsl(43, 32%, 94%);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 header {
@@ -33,6 +41,7 @@ input {
 
 #submit-container {
     display: flex;
+    /*width prevents this from collapsing. Need to add flex shrink. I think...*/
     width: 740px;
     /*next time make this a child of the above content and use em to determine width*/
     justify-content: flex-end;
@@ -125,11 +134,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* below text is what creates the footer's fixed position */
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     /*measured header to match height*/
     height: 80px;
     /* matched text color with body color */

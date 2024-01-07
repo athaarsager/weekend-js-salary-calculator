@@ -6,15 +6,8 @@ const currencyFormat = new Intl.NumberFormat("en-us", {
     currency: "USD",
 });//need to use this with .format to convert number to currency. Stored in variable since using in two places
 
-let employeeCount = 0;//track number of employees added to table
-
 function addEmployee(e) {
     e.preventDefault();
-
-    if (employeeCount === 7) {
-        alert("Too many employees! Looks like it's time for some layoffs :(")
-        return;
-    }
 
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
@@ -53,8 +46,6 @@ function addEmployee(e) {
     employees.push(employee);
 
     console.log(employees);
-
-    employeeCount++;
 
     updateTable();
 
