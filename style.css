@@ -43,9 +43,11 @@ input {
 #submit-container {
     display: flex;
     /*width prevents this from collapsing. Need to add flex shrink. I think...*/
-    width: 740px;
+    max-width: 671px;
     /*next time make this a child of the above content and use em to determine width*/
     justify-content: flex-end;
+    margin-right: 50px;
+    margin-left: 70px;
 }
 
 #submit-button, button {
@@ -114,8 +116,9 @@ td {
 /* need to actually make it align with table, not just bottom of page */
 #cost-container {
     display: flex;
-    width: 1035px;
+    max-width: 838px;
     justify-content: flex-end;
+    margin-left: 194px;
 }
 
 #total-cost-display {
